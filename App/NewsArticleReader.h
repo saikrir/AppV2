@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class NewsArticle
+@class NewsArticle;
 
 @protocol NewsArticleReader <NSObject>
 
@@ -16,6 +16,6 @@
 -(NSArray *) readNewsArticlesByPage:(NSNumber *) page;
 
 @optional
-
 -(NSArray *) readNewsArticles:(NSNumber *) count;
+
 @end
