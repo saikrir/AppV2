@@ -9,8 +9,10 @@
 #import <XCTest/XCTest.h>
 #import "TableTennisNewsArticleReader.h"
 
-@interface AppTests : XCTestCase
+NSString *const url= @"http://tabletennista.com/rss?page=1";
 
+@interface AppTests : XCTestCase
+@property TableTennisNewsArticleReader *reader;
 @end
 
 @implementation AppTests
@@ -18,6 +20,7 @@
 - (void)setUp
 {
     [super setUp];
+    self.reader = [[TableTennisNewsArticleReader alloc] initWithReaderURL:url];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -29,9 +32,8 @@
 
 - (void)testExample
 {
-    //XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-    TableTennisNewsArticleReader *reader = [[TableTennisNewsArticleReader alloc] initWithReaderURL:@"http://tabletennista.com/rss/"];
-    NSLog(@"reader %@", reader);
+    NSArray *articles = [self.reader readNewsArticles];
+    XCTAssert([ articles count] == 10, @"Count of reader Articles should be 10");
 }
 
 @end

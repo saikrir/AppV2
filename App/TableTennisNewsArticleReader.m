@@ -23,8 +23,6 @@
 
 @implementation TableTennisNewsArticleReader
 
-NSString *kNEW_ITEM = @"item";
-NSString *kIMAGE_REGEX = @"\"https?://.+/[A-Za-z_]+/.+\.(jpe?g|png)\"";
 
 -(instancetype) initWithReaderURL:(NSString *) readerURL
 {
@@ -36,7 +34,6 @@ NSString *kIMAGE_REGEX = @"\"https?://.+/[A-Za-z_]+/.+\.(jpe?g|png)\"";
         dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"EEE, dd MMM yyyy hh:mm:ss zz"];
         [dateFormat setLenient:YES];
-        [self loadNewsArticles];
     }
     return self;
 }
@@ -50,7 +47,13 @@ NSString *kIMAGE_REGEX = @"\"https?://.+/[A-Za-z_]+/.+\.(jpe?g|png)\"";
 }
 
 -(NSArray *) readNewsArticles{
-    return nil;
+    
+    if([self.newsArticles count] == 0)
+    {
+        [self loadNewsArticles];
+    }
+    
+    return self.newsArticles;
 }
 
 -(NSArray *) readNewsArticlesByPage:(NSNumber *) page{
@@ -66,11 +69,6 @@ NSString *kIMAGE_REGEX = @"\"https?://.+/[A-Za-z_]+/.+\.(jpe?g|png)\"";
                                     attributes:(NSDictionary *)attributeDict
 {
     if([elementName isEqualToString:kNEW_ITEM]){
-        if(currentArticle)
-        {
-            [self.newsArticles addObject:currentArticle];
-        }
-        
         currentArticle = [[NewsArticle alloc] init];
     }
     
