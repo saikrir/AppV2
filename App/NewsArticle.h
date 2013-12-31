@@ -15,5 +15,6 @@
 @property (nonatomic,strong) NSString *description;
 @property (nonatomic,strong) NSString *contentHtml;
 @property (nonatomic,strong) NSDate *pubDate;
+@property (nonatomic,strong) NSString *imageURL;
 
 @end

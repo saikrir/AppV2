@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "TableTennisNewsArticleReader.h"
 
 @interface AppTests : XCTestCase
 
@@ -28,7 +29,9 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    //XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    TableTennisNewsArticleReader *reader = [[TableTennisNewsArticleReader alloc] initWithReaderURL:@"http://tabletennista.com/rss/"];
+    NSLog(@"reader %@", reader);
 }
 
 @end

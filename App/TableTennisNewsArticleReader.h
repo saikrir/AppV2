@@ -11,4 +11,7 @@
 
 @interface TableTennisNewsArticleReader : NSObject <NewsArticleReader, NSXMLParserDelegate>
 
+@property (strong,atomic)  NSString *readerURL;
+
+-(instancetype) initWithReaderURL:(NSString *) readerURL;
 @end
