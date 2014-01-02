@@ -14,9 +14,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.mainViewController = [[UITabBarController  alloc] init];
     
     MainViewController *mainVC = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    self.mainViewController = mainVC;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    [self.mainViewController setViewControllers:@[navController]];
     
     self.window.rootViewController = self.mainViewController;
     [self.window makeKeyAndVisible];

@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="newsLoadingIndicator" destination="Juq-1a-bUo" id="z86-k4-Zv0"/>
+                <outlet property="newsView" destination="Vcu-50-BAh" id="nW7-5w-o8v"/>
                 <outlet property="view" destination="1" id="t80-gk-Fqp"/>
             </connections>
         </placeholder>
@@ -13,7 +15,30 @@
         <view contentMode="scaleToFill" id="1">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vcu-50-BAh">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="MQp-B0-dRy"/>
+                        <outlet property="delegate" destination="-1" id="wTf-Xl-GNU"/>
+                    </connections>
+                </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Juq-1a-bUo">
+                    <rect key="frame" x="150" y="256" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="Vcu-50-BAh" secondAttribute="centerY" id="C4M-vi-G44"/>
+                <constraint firstAttribute="centerX" secondItem="Vcu-50-BAh" secondAttribute="centerX" id="F2W-dk-pqD"/>
+                <constraint firstItem="Vcu-50-BAh" firstAttribute="centerX" secondItem="Juq-1a-bUo" secondAttribute="centerX" id="Fi4-jU-HWb"/>
+                <constraint firstItem="Vcu-50-BAh" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="JVy-l6-h0r"/>
+                <constraint firstItem="Vcu-50-BAh" firstAttribute="centerY" secondItem="Juq-1a-bUo" secondAttribute="centerY" constant="18" id="MAp-rZ-Xxh"/>
+                <constraint firstItem="Vcu-50-BAh" firstAttribute="top" secondItem="1" secondAttribute="top" id="pCj-8R-IhC"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

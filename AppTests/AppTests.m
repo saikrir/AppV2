@@ -32,8 +32,6 @@ NSString *const url= @"http://tabletennista.com/rss?page=1";
 
 - (void)testExample
 {
-    NSArray *articles = [self.reader readNewsArticles];
-    XCTAssert([ articles count] == 10, @"Count of reader Articles should be 10");
 }
 
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewsArticleDelegate.h"
+#import "NewsArticleReader.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController<UITabBarDelegate, UITableViewDataSource,NewsArticleDelegate>
 
 @end

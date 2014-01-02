@@ -9,6 +9,9 @@
 #import "TableTennisNewsArticleReader.h"
 #import "NewsArticle.h"
 
+NSString *const kNEW_ITEM = @"item";
+NSString *const kIMAGE_REGEX = @"\"https?://.+/[A-Za-z_]+/.+\.(jpe?g|png)\"";
+
 @interface TableTennisNewsArticleReader(){
     NSMutableString *elementText;
     NSString *currentElement;
@@ -39,25 +42,26 @@
 }
 
 
--(void) loadNewsArticles{
+// ToDo Need Caching Here ?
+
+-(void) readNewsArticles{
+    
     NSURL *rssURL = [NSURL URLWithString:self.readerURL];
-    self.xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:rssURL];
-    self.xmlParser.delegate =self;
-    [self.xmlParser parse];
+    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *newsArticlesSession = [NSURLSession sessionWithConfiguration:sessionConfig];
+    
+    NSURLSessionDataTask *dataTask = [newsArticlesSession dataTaskWithURL:rssURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        self.xmlParser = [[NSXMLParser alloc] initWithData:data];
+        self.xmlParser.delegate =self;
+        [self.xmlParser parse];
+        [self.newsArticleDelegate didRecieveNewsArticle:self.newsArticles andError:error];
+    }];
+    
+    [dataTask resume];
 }
 
--(NSArray *) readNewsArticles{
-    
-    if([self.newsArticles count] == 0)
-    {
-        [self loadNewsArticles];
-    }
-    
-    return self.newsArticles;
-}
-
--(NSArray *) readNewsArticlesByPage:(NSNumber *) page{
-    return nil;
+-(void) readNewsArticlesByPage:(NSNumber *) page{
+    //Todo Impl
 }
 
 
@@ -118,10 +122,12 @@
 -(NSString *) extractImageURL
 {
     NSError *error = nil;
+    
     NSString *imageUrl = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: kIMAGE_REGEX
                                                                            options:NSRegularExpressionCaseInsensitive
                                                                              error:&error];
+    
     NSRange imageURLRange = [regex rangeOfFirstMatchInString:elementText options:0 range:NSMakeRange(0, [elementText length])];
  
     if(imageURLRange.location != NSNotFound ){

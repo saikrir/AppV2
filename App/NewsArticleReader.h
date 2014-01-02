@@ -12,8 +12,8 @@
 
 @protocol NewsArticleReader <NSObject>
 
--(NSArray *) readNewsArticles;
--(NSArray *) readNewsArticlesByPage:(NSNumber *) page;
+-(void) readNewsArticles;
+-(void) readNewsArticlesByPage:(NSNumber *) page;
 
 @optional
 -(NSArray *) readNewsArticles:(NSNumber *) count;
