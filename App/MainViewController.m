@@ -8,9 +8,11 @@
 
 #import "MainViewController.h"
 #import "TableTennisNewsArticleReader.h"
+#import "NewsArticle.h"
 
 @interface MainViewController (){
     NSMutableArray *newsArticles;
+    NSInteger currentPage;
 }
     @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *newsLoadingIndicator;
 
@@ -20,7 +22,7 @@
 
 @implementation MainViewController
 
-NSString *const url= @"http://tabletennista.com/rss?page=1";
+NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=100&rss=";
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +32,7 @@ NSString *const url= @"http://tabletennista.com/rss?page=1";
         self.navigationItem.title = @"Table Tennis News";
         self.newsArticleReader = [[TableTennisNewsArticleReader alloc] initWithReaderURL:url];
         self -> newsArticles = [[NSMutableArray alloc] init];
+        self-> currentPage = 1;
     }
     return self;
 }
@@ -62,6 +65,8 @@ NSString *const url= @"http://tabletennista.com/rss?page=1";
 {
     [newsArticles addObjectsFromArray:news];
     
+    NSLog(@"Found %d Articles", [newsArticles count]);
+    
     dispatch_sync(dispatch_get_main_queue(), ^{
         [self.newsLoadingIndicator stopAnimating];
         [self.newsView reloadData];
@@ -83,11 +88,24 @@ NSString *const url= @"http://tabletennista.com/rss?page=1";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
+    NewsArticle *currentArticle = [newsArticles objectAtIndex:indexPath.row];
     
-    NSString *cellValue = [[newsArticles objectAtIndex:indexPath.row] title];
+    NSString *cellValue =  currentArticle.title;
     cell.textLabel.text = cellValue;
+    cell.detailTextLabel.text= currentArticle.description;
+
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:currentArticle.imageURL ]];
+
+    NSURLResponse *response = nil;
+    
+    NSError *error= nil;
+    
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    cell.imageView.image = [UIImage imageWithData:data];
+    
     return cell;
 }
 
@@ -98,15 +116,11 @@ NSString *const url= @"http://tabletennista.com/rss?page=1";
     CGSize scrollSize = scrollView.contentSize;
     
     float dist = offset.y + CGRectGetHeight(scrollView.bounds) - inset.bottom;
-    
-    float scrollTolerance = 44;
+    float scrollTolerance = 22;
     
     if(dist > scrollSize.height + scrollTolerance){
-        
-        // Todo Load More
-        
+        [self.newsArticleReader readNewsArticlesByPage:@(++currentPage)];
     }
-
 }
 
 

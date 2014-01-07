@@ -28,6 +28,9 @@
 		F7B695FA187104340050783E /* tabletennis92p.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F7B695F8187104340050783E /* tabletennis92p.jpg */; };
 		F7B695FB187104340050783E /* tabletennis.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F7B695F9187104340050783E /* tabletennis.jpeg */; };
 		F7DFCCF61871309300A4806F /* TableTennisNewsArticleReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DFCCF51871309300A4806F /* TableTennisNewsArticleReader.m */; };
+		F7FEF6A118764D1200A93790 /* TableTennisRSSV2Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF6A018764D1200A93790 /* TableTennisRSSV2Delegate.m */; };
+		F7FEF6A41876509900A93790 /* TableTennisRSSV1Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF6A31876509900A93790 /* TableTennisRSSV1Delegate.m */; };
+		F7FEF6A7187653D900A93790 /* TableTennisRSSBaseReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF6A6187653D900A93790 /* TableTennisRSSBaseReader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,12 @@
 		F7B695F9187104340050783E /* tabletennis.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tabletennis.jpeg; sourceTree = "<group>"; };
 		F7DFCCF41871309300A4806F /* TableTennisNewsArticleReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTennisNewsArticleReader.h; sourceTree = "<group>"; };
 		F7DFCCF51871309300A4806F /* TableTennisNewsArticleReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTennisNewsArticleReader.m; sourceTree = "<group>"; };
+		F7FEF69F18764D1200A93790 /* TableTennisRSSV2Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTennisRSSV2Delegate.h; sourceTree = "<group>"; };
+		F7FEF6A018764D1200A93790 /* TableTennisRSSV2Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTennisRSSV2Delegate.m; sourceTree = "<group>"; };
+		F7FEF6A21876509900A93790 /* TableTennisRSSV1Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTennisRSSV1Delegate.h; sourceTree = "<group>"; };
+		F7FEF6A31876509900A93790 /* TableTennisRSSV1Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTennisRSSV1Delegate.m; sourceTree = "<group>"; };
+		F7FEF6A5187653D900A93790 /* TableTennisRSSBaseReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTennisRSSBaseReader.h; sourceTree = "<group>"; };
+		F7FEF6A6187653D900A93790 /* TableTennisRSSBaseReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTennisRSSBaseReader.m; sourceTree = "<group>"; };
 		F9914EFEFCA248C9951A2A6F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -181,6 +190,12 @@
 				F7DFCCF41871309300A4806F /* TableTennisNewsArticleReader.h */,
 				F7DFCCF51871309300A4806F /* TableTennisNewsArticleReader.m */,
 				F704D84F1875017E00F46C73 /* NewsArticleDelegate.h */,
+				F7FEF69F18764D1200A93790 /* TableTennisRSSV2Delegate.h */,
+				F7FEF6A018764D1200A93790 /* TableTennisRSSV2Delegate.m */,
+				F7FEF6A21876509900A93790 /* TableTennisRSSV1Delegate.h */,
+				F7FEF6A31876509900A93790 /* TableTennisRSSV1Delegate.m */,
+				F7FEF6A5187653D900A93790 /* TableTennisRSSBaseReader.h */,
+				F7FEF6A6187653D900A93790 /* TableTennisRSSBaseReader.m */,
 			);
 			name = ArticleReader;
 			sourceTree = "<group>";
@@ -374,8 +389,11 @@
 				F7DFCCF61871309300A4806F /* TableTennisNewsArticleReader.m in Sources */,
 				F72981221870E49C00D46A73 /* MainViewController.m in Sources */,
 				F7A1E2C018712D3700B59FE1 /* NewsArticle.m in Sources */,
+				F7FEF6A41876509900A93790 /* TableTennisRSSV1Delegate.m in Sources */,
+				F7FEF6A7187653D900A93790 /* TableTennisRSSBaseReader.m in Sources */,
 				F729811C1870E49C00D46A73 /* AppDelegate.m in Sources */,
 				F72981181870E49C00D46A73 /* main.m in Sources */,
+				F7FEF6A118764D1200A93790 /* TableTennisRSSV2Delegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

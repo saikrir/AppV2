@@ -32,6 +32,21 @@ NSString *const url= @"http://tabletennista.com/rss?page=1";
 
 - (void)testExample
 {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSString *dateString = @"2013-12-21T08:00:00-05:00";
+    NSRange range = [dateString rangeOfString:@"T"];
+    
+    NSRange newRange = {0, range.location};
+    
+    NSString *newStr = [dateString substringWithRange:newRange];
+    
+    NSLog(@" %@", newStr);
+    
+    //NSString *dateString = @"2013-12-21T";
+    [formatter  setDateFormat:@"yyyy-MM-dd"];
+    [formatter setLenient:YES];
+    
+    NSLog(@"%@",[formatter dateFromString:newStr]);
 }
 
 @end
