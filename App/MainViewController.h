@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "NewsArticleDelegate.h"
 #import "NewsArticleReader.h"
+#import "SVProgressHUD.h"
 
-@interface MainViewController : UIViewController<UITabBarDelegate, UITableViewDataSource,NewsArticleDelegate>
+
+@interface MainViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,NewsArticleDelegate>
 
 @end

@@ -45,6 +45,7 @@
     NSLog(@"URL %@", urlWithParams);
     NSURL *rssURL = [NSURL URLWithString:urlWithParams];
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    sessionConfig.timeoutIntervalForRequest = 30;
     NSURLSession *newsArticlesSession = [NSURLSession sessionWithConfiguration:sessionConfig];
     TableTennisRSSBaseReader *delegate = [[TableTennisRSSV2Delegate alloc] init];
     
