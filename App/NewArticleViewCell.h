@@ -10,5 +10,7 @@
 
 @interface NewArticleViewCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *articleThumbNailView;
--(void) setImage:(NSString *) name;
+
+-(void) setDefaultImage;
+-(void) setImage:(UIImage *) image;
 @end

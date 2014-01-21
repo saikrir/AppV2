@@ -12,6 +12,6 @@
 #import "SVProgressHUD.h"
 
 
-@interface MainViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,NewsArticleDelegate>
+@interface MainViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate,NewsArticleDelegate>
 
 @end

@@ -14,18 +14,33 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        NSLog(@"Inited");
+        [self setup];
         self.articleThumbNailView = [[UIImageView alloc] initWithFrame:self.bounds]; // earlier it was frame
         [self.contentView addSubview:self.articleThumbNailView];
     }
     return self;
 }
 
--(void) setImage:(NSString *) name
-{
-    //
-    self.articleThumbNailView.image = [UIImage imageNamed:name];
+-(void) setImage:(UIImage *) image{
+     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.clipsToBounds = YES;
+    self.backgroundView = imageView;
+    self.backgroundView.clipsToBounds = YES;
     [self setNeedsLayout];
+}
+
+-(void) setDefaultImage
+{
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PlaceHolder"]];
+    self.backgroundView = imageView;
+    [self setNeedsLayout];
+}
+
+- (void)setup
+{
+    self.layer.cornerRadius = 10;
+    self.layer.borderWidth = 1.0;
+    self.layer.borderColor = [[UIColor colorWithRed:0 green:0 blue:0.7 alpha:1] CGColor];
 }
 
 @end
