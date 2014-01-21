@@ -35,7 +35,11 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
 {
     [super viewDidLoad];
     [newsArticles removeAllObjects];
+    
+    UINib *cellNib = [UINib nibWithNibName:@"NewsArticleThumbNail" bundle:nil];
+    
     [self.thumbNailsView registerClass:[NewArticleViewCell class] forCellWithReuseIdentifier:@"thumbNailCell"];
+    [self.thumbNailsView registerNib:cellNib forCellWithReuseIdentifier:@"thumbNailCell"];
     self.thumbNailsView.pagingEnabled = YES;
     
     

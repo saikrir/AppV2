@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewsArticle.h"
 
 @interface NewArticleViewCell : UICollectionViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *articleThumbNailView;
+@property (weak, nonatomic) IBOutlet UIImageView *articleThumbNailView;
+
+@property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) NewsArticle *newsArticle;
 
 -(void) setDefaultImage;
 -(void) setImage:(UIImage *) image;

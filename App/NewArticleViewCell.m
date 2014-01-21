@@ -15,32 +15,41 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setup];
-        self.articleThumbNailView = [[UIImageView alloc] initWithFrame:self.bounds]; // earlier it was frame
-        [self.contentView addSubview:self.articleThumbNailView];
     }
     return self;
 }
 
+
 -(void) setImage:(UIImage *) image{
-     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.clipsToBounds = YES;
-    self.backgroundView = imageView;
-    self.backgroundView.clipsToBounds = YES;
+    self.articleThumbNailView.image = image;
+    self.layer.cornerRadius = 10;
+    self.layer.borderWidth = 1.0;
+    self.titleLabel.text = @"Saikrishna";
+
     [self setNeedsLayout];
 }
 
 -(void) setDefaultImage
 {
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PlaceHolder"]];
-    self.backgroundView = imageView;
+    self.articleThumbNailView.image = [UIImage imageNamed:@"PlaceHolder"];
     [self setNeedsLayout];
 }
 
 - (void)setup
 {
-    self.layer.cornerRadius = 10;
-    self.layer.borderWidth = 1.0;
-    self.layer.borderColor = [[UIColor colorWithRed:0 green:0 blue:0.7 alpha:1] CGColor];
+    [self.articleThumbNailView removeFromSuperview];
+    [self.backgroundView addSubview:self.articleThumbNailView];
+    
+    int width = CGRectGetWidth(self.frame);
+    int height = CGRectGetHeight(self.frame);
+    
+    CGSize sz = [self.newsArticle.title sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(width/2, height/3, sz.width, sz.height)];
+    self.titleLabel.text = self.newsArticle.title;
+    [self addSubview:self.titleLabel];
+   // [self.contentView addSubview:self.titleLabel];
+
+    
 }
 
 @end
