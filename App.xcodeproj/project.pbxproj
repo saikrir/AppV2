@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8683546D622B4279AEBD624F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9914EFEFCA248C9951A2A6F /* libPods.a */; };
+		E69322C418932AAB005982FC /* Template.html in Resources */ = {isa = PBXBuildFile; fileRef = E69322C318932AAB005982FC /* Template.html */; };
 		E6E5D0011892C47A00770514 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E5D0001892C47A00770514 /* libxml2.2.dylib */; };
 		F704D84E1874FA2F00F46C73 /* PlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = F704D84D1874FA2F00F46C73 /* PlaceHolder.png */; };
 		F71083E5188E1D4C00502A52 /* NewArticleContentDismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F71083E4188E1D4C00502A52 /* NewArticleContentDismissTransition.m */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		2E7193130BCA4806AE49807E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		E69322C318932AAB005982FC /* Template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Template.html; sourceTree = "<group>"; };
 		E6E5D0001892C47A00770514 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		F704D84D1874FA2F00F46C73 /* PlaceHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlaceHolder.png; sourceTree = "<group>"; };
 		F704D84F1875017E00F46C73 /* NewsArticleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsArticleDelegate.h; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		F72981121870E49C00D46A73 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E69322C318932AAB005982FC /* Template.html */,
 				F72981131870E49C00D46A73 /* App-Info.plist */,
 				F72981141870E49C00D46A73 /* InfoPlist.strings */,
 				F72981171870E49C00D46A73 /* main.m */,
@@ -387,6 +390,7 @@
 				F7B695FB187104340050783E /* tabletennis.jpeg in Resources */,
 				F7B695F71871036D0050783E /* TableTennis.jpg in Resources */,
 				F7DED561188CEF2A0011FDDC /* NewsArticleContentViewController.xib in Resources */,
+				E69322C418932AAB005982FC /* Template.html in Resources */,
 				F76DE562188369F300BABE03 /* NewsArticleThumbNail.xib in Resources */,
 				F7B695FA187104340050783E /* tabletennis92p.jpg in Resources */,
 				F704D84E1874FA2F00F46C73 /* PlaceHolder.png in Resources */,

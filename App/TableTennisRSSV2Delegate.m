@@ -93,5 +93,18 @@ qualifiedName:(NSString *)qName
     [elementText appendString:string];
 }
 
+-(void) extractArticleBody:(NSString *) link{
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURL *url = [NSURL URLWithString:link];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+    }];
+    
+    [task resume];
+}
+
 
 @end
