@@ -42,11 +42,10 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     [self.thumbNailsView registerNib:cellNib forCellWithReuseIdentifier:@"thumbNailCell"];
     self.thumbNailsView.pagingEnabled = YES;
     
-    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(150, 130)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    [self.thumbNailsView setCollectionViewLayout:flowLayout];
+    [self.thumbNailsView setCollectionViewLayout:flowLayout animated:YES completion:nil];
     self.thumbNailsView.backgroundColor = [UIColor whiteColor];
     
     
@@ -61,7 +60,6 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
 
 #pragma mark - UICollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    NSLog(@"%d",  [newsArticles count] );
     return [newsArticles count];
 }
 
@@ -91,7 +89,7 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     return cell;
 }
 
--(void) collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+-(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     NewsArticle *newsArticle = (NewsArticle *)[newsArticles objectAtIndex:indexPath.row];
     

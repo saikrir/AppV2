@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         self.newsArticles = [[NSMutableArray alloc] init];
-        fields = @[@"title",@"guid",@"link",@"description",@"a10:updated", @"enclosure"];
+        fields = @[@"title",@"guid",@"link",@"description",@"a10:updated", @"enclosure",@"category", @"a10:author"];
         dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat  setDateFormat:@"yyyy-MM-dd"];
         [dateFormat setLenient:YES];
@@ -78,6 +78,12 @@ qualifiedName:(NSString *)qName
                 currentArticle.pubDate = [dateFormat dateFromString:dateStr];
             }
             
+        }
+        else if([@"category" isEqualToString:elementName]){
+            NSLog(@"Category TExt %@", elementText);
+        }
+        else if([@"a10:author" isEqualToString:elementName]){
+            NSLog(@"Author %@", elementText);
         }
     }
 }

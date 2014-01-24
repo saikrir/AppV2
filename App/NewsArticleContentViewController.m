@@ -37,7 +37,7 @@
     
     NSString *link = self.newsArticle.link;
     
-    NSURL *articleURL = [NSURL URLWithString:@"http://www.teamusa.org/USA-Table-Tennis/Features/2014/January/15/Ross-Brown-Joins-USATT-Media"];
+    NSURL *articleURL = [NSURL URLWithString:link];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:articleURL];
     
     [self.myView loadRequest: request];

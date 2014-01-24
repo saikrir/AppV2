@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8683546D622B4279AEBD624F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9914EFEFCA248C9951A2A6F /* libPods.a */; };
+		E6E5D0011892C47A00770514 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E5D0001892C47A00770514 /* libxml2.2.dylib */; };
 		F704D84E1874FA2F00F46C73 /* PlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = F704D84D1874FA2F00F46C73 /* PlaceHolder.png */; };
 		F71083E5188E1D4C00502A52 /* NewArticleContentDismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F71083E4188E1D4C00502A52 /* NewArticleContentDismissTransition.m */; };
 		F729810C1870E49C00D46A73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F729810B1870E49C00D46A73 /* Foundation.framework */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		2E7193130BCA4806AE49807E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		E6E5D0001892C47A00770514 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		F704D84D1874FA2F00F46C73 /* PlaceHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlaceHolder.png; sourceTree = "<group>"; };
 		F704D84F1875017E00F46C73 /* NewsArticleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsArticleDelegate.h; sourceTree = "<group>"; };
 		F71083E3188E1D4C00502A52 /* NewArticleContentDismissTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewArticleContentDismissTransition.h; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6E5D0011892C47A00770514 /* libxml2.2.dylib in Frameworks */,
 				F729810E1870E49C00D46A73 /* CoreGraphics.framework in Frameworks */,
 				F72981101870E49C00D46A73 /* UIKit.framework in Frameworks */,
 				F729810C1870E49C00D46A73 /* Foundation.framework in Frameworks */,
@@ -153,6 +156,7 @@
 		F729810A1870E49C00D46A73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6E5D0001892C47A00770514 /* libxml2.2.dylib */,
 				F729810B1870E49C00D46A73 /* Foundation.framework */,
 				F729810D1870E49C00D46A73 /* CoreGraphics.framework */,
 				F729810F1870E49C00D46A73 /* UIKit.framework */,
@@ -575,6 +579,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "App/App-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/SVProgressHUD\"",
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+				);
 				INFOPLIST_FILE = "App/App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -592,6 +602,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "App/App-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/SVProgressHUD\"",
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+				);
 				INFOPLIST_FILE = "App/App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
