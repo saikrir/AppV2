@@ -41,7 +41,7 @@
                         <action selector="handleArticleViewToggle:" destination="-1" eventType="valueChanged" id="gJt-SR-kxU"/>
                     </connections>
                 </segmentedControl>
-                <webView contentMode="scaleAspectFit" scalesPageToFit="YES" suppressesIncrementalRendering="YES" paginationMode="leftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="Nu0-aW-qMm">
+                <webView contentMode="scaleAspectFit" scalesPageToFit="YES" suppressesIncrementalRendering="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nu0-aW-qMm">
                     <rect key="frame" x="0.0" y="89" width="320" height="479"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

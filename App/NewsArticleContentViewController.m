@@ -13,6 +13,7 @@
 @property (nonatomic,weak) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *closeButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *articleSegment;
+@property (nonatomic, assign) CGRect originalFrame;
 @end
 
 @implementation NewsArticleContentViewController
@@ -31,10 +32,12 @@
     [super viewDidLoad];
     self.webView.scalesPageToFit = YES;
     self.webView.delegate = self;
+    self.webView.scrollView.delegate = self;
 }
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    self.originalFrame = self.webView.frame;
     self.view.layer.borderWidth = 0.5;
     self.view.layer.borderColor = [[UIColor blackColor] CGColor];
     [self loadOfflineHTMLPage];
@@ -128,11 +131,31 @@
     
     [self.webView sizeToFit];
     
-    CGRect webViewFrame = CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y, self.view.bounds.size.width - 20, self.view.bounds.size.height-100);
+    CGRect webViewFrame = CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y, self.view.bounds.size.width - 10, self.view.bounds.size.height-100);
 
     self.webView.frame = webViewFrame;
     
     [SVProgressHUD dismiss];
+}
+
+
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    CGPoint offset = scrollView.contentOffset;
+    CGRect webFrame = self.webView.frame;
+    if(offset.y > 0 ){
+        webFrame.origin.y = webFrame.origin.y- fabs(offset.y);
+        webFrame.origin.y = MAX(0,webFrame.origin.y);
+        webFrame.size.height = MIN(self.originalFrame.size.height, webFrame.size.height + fabs(offset.y));
+        self.webView.frame = webFrame;
+        scrollView.contentOffset = CGPointZero;
+    }
+    else{ // Scrolling down
+        webFrame.origin.y = MIN(self.originalFrame.origin.y, webFrame.origin.y + fabs(offset.y)); // if there is room to scroll down
+        webFrame.size.height = MAX(self.originalFrame.size.height -100, webFrame.size.height - fabs(offset.y));
+        self.webView.frame = webFrame;
+        scrollView.contentOffset = CGPointZero;
+    }
 }
 
 @end
