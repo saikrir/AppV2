@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NewsArticle.h"
 
-@interface NewsArticleContentViewController : UIViewController
+@interface NewsArticleContentViewController : UIViewController<UIWebViewDelegate>
 
 @property (nonatomic,strong) NewsArticle *newsArticle;
 

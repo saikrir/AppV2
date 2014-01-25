@@ -80,10 +80,10 @@ qualifiedName:(NSString *)qName
             
         }
         else if([@"category" isEqualToString:elementName]){
-            NSLog(@"Category TExt %@", elementText);
+            //NSLog(@"Category TExt %@", elementText);
         }
         else if([@"a10:author" isEqualToString:elementName]){
-            NSLog(@"Author %@", elementText);
+            //NSLog(@"Author %@", elementText);
         }
     }
 }
@@ -91,19 +91,6 @@ qualifiedName:(NSString *)qName
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
     [elementText appendString:string];
-}
-
--(void) extractArticleBody:(NSString *) link{
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    NSURL *url = [NSURL URLWithString:link];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    
-    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-    }];
-    
-    [task resume];
 }
 
 
