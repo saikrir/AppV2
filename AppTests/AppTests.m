@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "TableTennisNewsArticleReader.h"
+#import "TableTennisInformationService.h"
 
 NSString *const url= @"http://tabletennista.com/rss?page=1";
 
@@ -47,6 +48,11 @@ NSString *const url= @"http://tabletennista.com/rss?page=1";
     [formatter setLenient:YES];
     
     NSLog(@"%@",[formatter dateFromString:newStr]);
+}
+
+-(void) testContent{
+    TableTennisInformationService *ttSvc = [[TableTennisInformationService alloc] init];
+    [ttSvc getLatestTornaments];
 }
 
 @end

@@ -11,6 +11,9 @@
 		E69322C418932AAB005982FC /* Template.html in Resources */ = {isa = PBXBuildFile; fileRef = E69322C318932AAB005982FC /* Template.html */; };
 		E6E5D0011892C47A00770514 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E5D0001892C47A00770514 /* libxml2.2.dylib */; };
 		F704D84E1874FA2F00F46C73 /* PlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = F704D84D1874FA2F00F46C73 /* PlaceHolder.png */; };
+		F70DA657189400CB007D4832 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F70DA656189400CB007D4832 /* UIImage+ImageEffects.m */; };
+		F70DA65A1894011F007D4832 /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F70DA6591894011F007D4832 /* MyLocation.m */; };
+		F70DA65E18940341007D4832 /* LocationInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = F70DA65D18940341007D4832 /* LocationInfoService.m */; };
 		F71083E5188E1D4C00502A52 /* NewArticleContentDismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F71083E4188E1D4C00502A52 /* NewArticleContentDismissTransition.m */; };
 		F729810C1870E49C00D46A73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F729810B1870E49C00D46A73 /* Foundation.framework */; };
 		F729810E1870E49C00D46A73 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F729810D1870E49C00D46A73 /* CoreGraphics.framework */; };
@@ -30,6 +33,12 @@
 		F76DE562188369F300BABE03 /* NewsArticleThumbNail.xib in Resources */ = {isa = PBXBuildFile; fileRef = F76DE561188369F300BABE03 /* NewsArticleThumbNail.xib */; };
 		F76DE56718836A9A00BABE03 /* UIPopoverController+iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DE56618836A9A00BABE03 /* UIPopoverController+iPhone.m */; };
 		F76DE56A18836B4B00BABE03 /* NewArticleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DE56918836B4B00BABE03 /* NewArticleViewCell.m */; };
+		F78FF7F61893749000EA5F70 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = F78FF7F11893749000EA5F70 /* TFHpple.m */; };
+		F78FF7F71893749000EA5F70 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F78FF7F31893749000EA5F70 /* TFHppleElement.m */; };
+		F78FF7F81893749000EA5F70 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = F78FF7F51893749000EA5F70 /* XPathQuery.m */; };
+		F78FF7FC189374EA00EA5F70 /* TableTennisInformationService.m in Sources */ = {isa = PBXBuildFile; fileRef = F78FF7FB189374EA00EA5F70 /* TableTennisInformationService.m */; };
+		F78FF7FF18937CCF00EA5F70 /* TTTournament.m in Sources */ = {isa = PBXBuildFile; fileRef = F78FF7FE18937CCF00EA5F70 /* TTTournament.m */; };
+		F78FF8031893848000EA5F70 /* TTPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F78FF8021893848000EA5F70 /* TTPlayer.m */; };
 		F7A1E2C018712D3700B59FE1 /* NewsArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A1E2BF18712D3700B59FE1 /* NewsArticle.m */; };
 		F7B695F71871036D0050783E /* TableTennis.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F7B695F61871036D0050783E /* TableTennis.jpg */; };
 		F7B695FA187104340050783E /* tabletennis92p.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F7B695F8187104340050783E /* tabletennis92p.jpg */; };
@@ -59,6 +68,13 @@
 		E6E5D0001892C47A00770514 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		F704D84D1874FA2F00F46C73 /* PlaceHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlaceHolder.png; sourceTree = "<group>"; };
 		F704D84F1875017E00F46C73 /* NewsArticleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsArticleDelegate.h; sourceTree = "<group>"; };
+		F70DA655189400CB007D4832 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		F70DA656189400CB007D4832 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		F70DA6581894011F007D4832 /* MyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLocation.h; sourceTree = "<group>"; };
+		F70DA6591894011F007D4832 /* MyLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLocation.m; sourceTree = "<group>"; };
+		F70DA65B189401F9007D4832 /* LocationInoDataDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationInoDataDelegate.h; sourceTree = "<group>"; };
+		F70DA65C18940341007D4832 /* LocationInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationInfoService.h; sourceTree = "<group>"; };
+		F70DA65D18940341007D4832 /* LocationInfoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationInfoService.m; sourceTree = "<group>"; };
 		F71083E3188E1D4C00502A52 /* NewArticleContentDismissTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewArticleContentDismissTransition.h; sourceTree = "<group>"; };
 		F71083E4188E1D4C00502A52 /* NewArticleContentDismissTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewArticleContentDismissTransition.m; sourceTree = "<group>"; };
 		F72981081870E49C00D46A73 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +102,19 @@
 		F76DE56618836A9A00BABE03 /* UIPopoverController+iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+iPhone.m"; sourceTree = "<group>"; };
 		F76DE56818836B4B00BABE03 /* NewArticleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewArticleViewCell.h; sourceTree = "<group>"; };
 		F76DE56918836B4B00BABE03 /* NewArticleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewArticleViewCell.m; sourceTree = "<group>"; };
+		F78FF7F01893749000EA5F70 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		F78FF7F11893749000EA5F70 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		F78FF7F21893749000EA5F70 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		F78FF7F31893749000EA5F70 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		F78FF7F41893749000EA5F70 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		F78FF7F51893749000EA5F70 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		F78FF7FA189374EA00EA5F70 /* TableTennisInformationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTennisInformationService.h; sourceTree = "<group>"; };
+		F78FF7FB189374EA00EA5F70 /* TableTennisInformationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTennisInformationService.m; sourceTree = "<group>"; };
+		F78FF7FD18937CCF00EA5F70 /* TTTournament.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTournament.h; sourceTree = "<group>"; };
+		F78FF7FE18937CCF00EA5F70 /* TTTournament.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTournament.m; sourceTree = "<group>"; };
+		F78FF80018937F7C00EA5F70 /* TableTennisInformationServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableTennisInformationServiceDelegate.h; sourceTree = "<group>"; };
+		F78FF8011893848000EA5F70 /* TTPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPlayer.h; sourceTree = "<group>"; };
+		F78FF8021893848000EA5F70 /* TTPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPlayer.m; sourceTree = "<group>"; };
 		F7A1E2BE18712D3700B59FE1 /* NewsArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsArticle.h; sourceTree = "<group>"; };
 		F7A1E2BF18712D3700B59FE1 /* NewsArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsArticle.m; sourceTree = "<group>"; };
 		F7A1E2C118712EC200B59FE1 /* NewsArticleReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsArticleReader.h; sourceTree = "<group>"; };
@@ -134,6 +163,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F70DA6541894006A007D4832 /* LocationInfo */ = {
+			isa = PBXGroup;
+			children = (
+				F70DA65B189401F9007D4832 /* LocationInoDataDelegate.h */,
+				F70DA65C18940341007D4832 /* LocationInfoService.h */,
+				F70DA65D18940341007D4832 /* LocationInfoService.m */,
+			);
+			name = LocationInfo;
+			sourceTree = "<group>";
+		};
 		F72980FF1870E49C00D46A73 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +197,7 @@
 		F729810A1870E49C00D46A73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F78FF7EF189373E300EA5F70 /* Hpple */,
 				E6E5D0001892C47A00770514 /* libxml2.2.dylib */,
 				F729810B1870E49C00D46A73 /* Foundation.framework */,
 				F729810D1870E49C00D46A73 /* CoreGraphics.framework */,
@@ -171,6 +211,8 @@
 		F72981111870E49C00D46A73 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F70DA6541894006A007D4832 /* LocationInfo */,
+				F78FF7F9189374BA00EA5F70 /* USATTInfo */,
 				F7DED562188CF2A40011FDDC /* ViewTransitions */,
 				F76DE56318836A2400BABE03 /* categories */,
 				F7A1E2BD18712D1800B59FE1 /* Model */,
@@ -216,10 +258,35 @@
 		F76DE56318836A2400BABE03 /* categories */ = {
 			isa = PBXGroup;
 			children = (
+				F70DA655189400CB007D4832 /* UIImage+ImageEffects.h */,
+				F70DA656189400CB007D4832 /* UIImage+ImageEffects.m */,
 				F76DE56518836A9A00BABE03 /* UIPopoverController+iPhone.h */,
 				F76DE56618836A9A00BABE03 /* UIPopoverController+iPhone.m */,
 			);
 			name = categories;
+			sourceTree = "<group>";
+		};
+		F78FF7EF189373E300EA5F70 /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				F78FF7F01893749000EA5F70 /* TFHpple.h */,
+				F78FF7F11893749000EA5F70 /* TFHpple.m */,
+				F78FF7F21893749000EA5F70 /* TFHppleElement.h */,
+				F78FF7F31893749000EA5F70 /* TFHppleElement.m */,
+				F78FF7F41893749000EA5F70 /* XPathQuery.h */,
+				F78FF7F51893749000EA5F70 /* XPathQuery.m */,
+			);
+			path = Hpple;
+			sourceTree = "<group>";
+		};
+		F78FF7F9189374BA00EA5F70 /* USATTInfo */ = {
+			isa = PBXGroup;
+			children = (
+				F78FF7FA189374EA00EA5F70 /* TableTennisInformationService.h */,
+				F78FF7FB189374EA00EA5F70 /* TableTennisInformationService.m */,
+				F78FF80018937F7C00EA5F70 /* TableTennisInformationServiceDelegate.h */,
+			);
+			name = USATTInfo;
 			sourceTree = "<group>";
 		};
 		F7A1E2BC1871273F00B59FE1 /* ArticleReader */ = {
@@ -244,6 +311,12 @@
 			children = (
 				F7A1E2BE18712D3700B59FE1 /* NewsArticle.h */,
 				F7A1E2BF18712D3700B59FE1 /* NewsArticle.m */,
+				F78FF7FD18937CCF00EA5F70 /* TTTournament.h */,
+				F78FF7FE18937CCF00EA5F70 /* TTTournament.m */,
+				F78FF8011893848000EA5F70 /* TTPlayer.h */,
+				F78FF8021893848000EA5F70 /* TTPlayer.m */,
+				F70DA6581894011F007D4832 /* MyLocation.h */,
+				F70DA6591894011F007D4832 /* MyLocation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -447,16 +520,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F78FF7FF18937CCF00EA5F70 /* TTTournament.m in Sources */,
 				F7DFCCF61871309300A4806F /* TableTennisNewsArticleReader.m in Sources */,
 				F7DED565188CF2CD0011FDDC /* NewArticleViewTransition.m in Sources */,
+				F78FF7F81893749000EA5F70 /* XPathQuery.m in Sources */,
 				F72981221870E49C00D46A73 /* MainViewController.m in Sources */,
+				F78FF7F61893749000EA5F70 /* TFHpple.m in Sources */,
 				F71083E5188E1D4C00502A52 /* NewArticleContentDismissTransition.m in Sources */,
+				F70DA65A1894011F007D4832 /* MyLocation.m in Sources */,
 				F7A1E2C018712D3700B59FE1 /* NewsArticle.m in Sources */,
 				F7FEF6A41876509900A93790 /* TableTennisRSSV1Delegate.m in Sources */,
+				F78FF7FC189374EA00EA5F70 /* TableTennisInformationService.m in Sources */,
 				F7FEF6A7187653D900A93790 /* TableTennisRSSBaseReader.m in Sources */,
+				F70DA65E18940341007D4832 /* LocationInfoService.m in Sources */,
 				F729811C1870E49C00D46A73 /* AppDelegate.m in Sources */,
+				F78FF8031893848000EA5F70 /* TTPlayer.m in Sources */,
+				F78FF7F71893749000EA5F70 /* TFHppleElement.m in Sources */,
 				F72981181870E49C00D46A73 /* main.m in Sources */,
 				F7FEF6A118764D1200A93790 /* TableTennisRSSV2Delegate.m in Sources */,
+				F70DA657189400CB007D4832 /* UIImage+ImageEffects.m in Sources */,
 				F7DED560188CEF2A0011FDDC /* NewsArticleContentViewController.m in Sources */,
 				F76DE56A18836B4B00BABE03 /* NewArticleViewCell.m in Sources */,
 				F76DE56718836A9A00BABE03 /* UIPopoverController+iPhone.m in Sources */,

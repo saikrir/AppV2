@@ -31,18 +31,18 @@
                     </items>
                 </navigationBar>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="b8Z-iz-8KC">
-                    <rect key="frame" x="38" y="59" width="245" height="29"/>
+                    <rect key="frame" x="56" y="59" width="209" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
-                        <segment title="News Article View"/>
+                        <segment title="Summary View"/>
                         <segment title="Web View"/>
                     </segments>
                     <connections>
                         <action selector="handleArticleViewToggle:" destination="-1" eventType="valueChanged" id="gJt-SR-kxU"/>
                     </connections>
                 </segmentedControl>
-                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nu0-aW-qMm">
-                    <rect key="frame" x="0.0" y="101" width="320" height="467"/>
+                <webView contentMode="scaleAspectFit" scalesPageToFit="YES" suppressesIncrementalRendering="YES" paginationMode="leftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="Nu0-aW-qMm">
+                    <rect key="frame" x="0.0" y="89" width="320" height="479"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
@@ -50,16 +50,14 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="duk-it-jcs" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="4sv-9Z-wWd"/>
-                <constraint firstItem="Nu0-aW-qMm" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="7ZP-E3-uzg"/>
+                <constraint firstItem="b8Z-iz-8KC" firstAttribute="centerX" secondItem="duk-it-jcs" secondAttribute="centerX" constant="0.5" id="6Dg-Ag-2jC"/>
+                <constraint firstItem="Nu0-aW-qMm" firstAttribute="top" secondItem="b8Z-iz-8KC" secondAttribute="bottom" constant="2" id="AmA-09-4ku"/>
                 <constraint firstItem="duk-it-jcs" firstAttribute="top" secondItem="1" secondAttribute="top" id="HDo-1o-I2X"/>
-                <constraint firstItem="Nu0-aW-qMm" firstAttribute="top" secondItem="b8Z-iz-8KC" secondAttribute="bottom" constant="14" id="QSi-Wh-20v"/>
-                <constraint firstAttribute="centerY" secondItem="Nu0-aW-qMm" secondAttribute="centerY" constant="-50.5" id="Qr2-Zm-zjg"/>
-                <constraint firstAttribute="centerX" secondItem="Nu0-aW-qMm" secondAttribute="centerX" id="ant-vc-oU6"/>
-                <constraint firstItem="Nu0-aW-qMm" firstAttribute="top" secondItem="1" secondAttribute="top" constant="101" id="ebt-DI-mbc"/>
-                <constraint firstAttribute="centerY" secondItem="b8Z-iz-8KC" secondAttribute="centerY" constant="211" id="gjw-or-DsA"/>
-                <constraint firstItem="b8Z-iz-8KC" firstAttribute="centerX" secondItem="duk-it-jcs" secondAttribute="centerX" id="huj-QJ-drp"/>
+                <constraint firstItem="Nu0-aW-qMm" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ZYw-Zk-DOm"/>
+                <constraint firstAttribute="centerX" secondItem="Nu0-aW-qMm" secondAttribute="centerX" id="bdF-Em-Nnp"/>
+                <constraint firstAttribute="centerY" secondItem="Nu0-aW-qMm" secondAttribute="centerY" constant="-44.5" id="lKw-P8-GA9"/>
                 <constraint firstAttribute="trailing" secondItem="duk-it-jcs" secondAttribute="trailing" id="odm-0t-C4a"/>
-                <constraint firstItem="b8Z-iz-8KC" firstAttribute="top" secondItem="1" secondAttribute="top" constant="59" id="zIF-hn-d36"/>
+                <constraint firstItem="Nu0-aW-qMm" firstAttribute="top" secondItem="1" secondAttribute="top" constant="89" id="tOS-LB-enK"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

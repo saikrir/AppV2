@@ -10,8 +10,11 @@
 #import "NewsArticleDelegate.h"
 #import "NewsArticleReader.h"
 #import "SVProgressHUD.h"
+#import "TableTennisInformationService.h"
+#import "TableTennisInformationServiceDelegate.h"
+#import "LocationInoDataDelegate.h"
 
 
-@interface MainViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate,NewsArticleDelegate>
+@interface MainViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate,NewsArticleDelegate,TableTennisInformationServiceDelegate,LocationInoDataDelegate>
 
 @end

@@ -6,6 +6,9 @@
 #import "NewsArticleContentViewController.h"
 #import "NewArticleViewTransition.h"
 #import "NewArticleContentDismissTransition.h"
+#import "TTTournament.h"
+#import "TTPlayer.h"
+#import "LocationInfoService.h"
 
 
 @interface MainViewController(){
@@ -14,6 +17,7 @@
 
 @property (nonatomic, strong) TableTennisNewsArticleReader *newsArticleReader;
 @property (nonatomic, strong) NSURLSession *thumbNailSession;
+@property (nonatomic, strong) TableTennisInformationService *ttSvc;
 @property (nonatomic, weak) IBOutlet UICollectionView *thumbNailsView;
 @end
 
@@ -27,6 +31,8 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     if (self) {
         self.navigationItem.title = @"Table Tennis News";
         newsArticles = [[NSMutableArray alloc] initWithCapacity:50];
+        self.ttSvc = [[TableTennisInformationService alloc] init];
+        self.ttSvc.dataDelegate = self;
     }
     return self;
 }
@@ -55,6 +61,11 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     self.newsArticleReader.newsArticleDelegate = self;
     [self.newsArticleReader readNewsArticles];
     [SVProgressHUD showWithStatus:@"Loading.." maskType:SVProgressHUDMaskTypeBlack];
+    
+    //[self.ttSvc top20Player:@"2014"];
+    LocationInfoService *lSvc = [[LocationInfoService alloc] init];
+    lSvc.locationDataDelegate = self;
+    [lSvc whatsMyLocation];
 }
 
 
@@ -132,4 +143,38 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     return dismissTransition;
 }
 
+-(void) didRecieveTableTennisTournamentInformation:(NSArray *)data andError:(NSError  *) error
+{
+    [data enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        TTTournament *trnment = (TTTournament *)obj;
+        NSLog(@"TournmentName %@",trnment.tournmentName);
+        NSLog(@"TournmentDate %@",trnment.date);
+        NSLog(@"TournmentState %@",trnment.state);
+    }];
+}
+
+-(void) didRecieveTableTennisPlayerformation:(NSArray *) data andError:(NSError  *) error{
+    
+    [data enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        TTPlayer *player = (TTPlayer *)obj;
+        NSLog(@"Player Name %@",player.name);
+        NSLog(@"Player Rating %@",player.rating);
+        NSLog(@"Player State %@",player.state);
+    }];
+}
+
+-(void) didRecieveTop20TableTennisPlayersformation:(NSArray *) data andError:(NSError  *) error{
+    [data enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        TTPlayer *player = (TTPlayer *)obj;
+        NSLog(@"Player Name %@",player.name);
+        NSLog(@"Player Rank %@",player.rank);
+        NSLog(@"Player Wins %@",player.wins);
+    }];
+}
+
+-(void) didRecieveLocationInformation:(MyLocation *)location andError:(NSError *)error
+{
+    NSLog(@"IP %@", location.ip);
+    NSLog(@"IP %@", location.regionCode);
+}
 @end

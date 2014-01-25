@@ -35,7 +35,6 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    [SVProgressHUD showWithStatus:@"Loading.." maskType:SVProgressHUDMaskTypeBlack];
     self.view.layer.borderWidth = 0.5;
     self.view.layer.borderColor = [[UIColor blackColor] CGColor];
     [self loadOfflineHTMLPage];
@@ -74,7 +73,6 @@
 - (IBAction)handleArticleViewToggle:(id)sender {
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
     NSUInteger selectedIndex = [segmentedControl selectedSegmentIndex];
-    [SVProgressHUD showWithStatus:@"Loading.." maskType:SVProgressHUDMaskTypeBlack];
     NSURL *resetURL = [NSURL URLWithString:@"about:blank"];
     [self.webView loadRequest:[NSURLRequest requestWithURL:resetURL ]];
     
@@ -86,6 +84,15 @@
     }
 }
 
+
+-(void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self.webView sizeToFit];
+    
+    CGRect webViewFrame = CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y, self.view.bounds.size.width - 20, self.view.bounds.size.height-100);
+    
+    self.webView.frame = webViewFrame;
+}
 
 -(NSString *) generateHTML
 {
@@ -111,13 +118,21 @@
     return htmlString;
 }
 
+-(void) webViewDidStartLoad:(UIWebView *)webView{
+    dispatch_async(dispatch_get_main_queue(), ^{
+       [SVProgressHUD showWithStatus:@"Loading.." maskType:SVProgressHUDMaskTypeNone];
+    });
+}
+
 -(void) webViewDidFinishLoad:(UIWebView *)webView{
     
-     [self.webView sizeToFit];
+    [self.webView sizeToFit];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [SVProgressHUD dismiss];
-    });
+    CGRect webViewFrame = CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y, self.view.bounds.size.width - 20, self.view.bounds.size.height-100);
+
+    self.webView.frame = webViewFrame;
+    
+    [SVProgressHUD dismiss];
 }
 
 @end
