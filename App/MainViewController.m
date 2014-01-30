@@ -2,7 +2,7 @@
 #import "MainViewController.h"
 #import "TableTennisNewsArticleReader.h"
 #import "NewsArticle.h"
-#import "NewArticleViewCell.h"
+#import "NewsArticleViewCell.h"
 #import "NewsArticleContentViewController.h"
 #import "NewArticleViewTransition.h"
 #import "NewArticleContentDismissTransition.h"
@@ -44,7 +44,7 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     
     UINib *cellNib = [UINib nibWithNibName:@"NewsArticleThumbNail" bundle:nil];
     
-    [self.thumbNailsView registerClass:[NewArticleViewCell class] forCellWithReuseIdentifier:@"thumbNailCell"];
+    [self.thumbNailsView registerClass:[NewsArticleViewCell class] forCellWithReuseIdentifier:@"thumbNailCell"];
     [self.thumbNailsView registerNib:cellNib forCellWithReuseIdentifier:@"thumbNailCell"];
     self.thumbNailsView.pagingEnabled = YES;
     
@@ -80,7 +80,7 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NewArticleViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"thumbNailCell" forIndexPath:indexPath];
+    NewsArticleViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"thumbNailCell" forIndexPath:indexPath];
     NewsArticle *newsArticle = (NewsArticle *)[newsArticles objectAtIndex:indexPath.row];
     [cell setDefaultImage];
     
