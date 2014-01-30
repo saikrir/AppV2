@@ -21,18 +21,16 @@
 		F72981161870E49C00D46A73 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F72981141870E49C00D46A73 /* InfoPlist.strings */; };
 		F72981181870E49C00D46A73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F72981171870E49C00D46A73 /* main.m */; };
 		F729811C1870E49C00D46A73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F729811B1870E49C00D46A73 /* AppDelegate.m */; };
-		F72981221870E49C00D46A73 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72981211870E49C00D46A73 /* MainViewController.m */; };
 		F72981241870E49C00D46A73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F72981231870E49C00D46A73 /* Images.xcassets */; };
 		F729812B1870E49C00D46A73 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F729812A1870E49C00D46A73 /* XCTest.framework */; };
 		F729812C1870E49C00D46A73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F729810B1870E49C00D46A73 /* Foundation.framework */; };
 		F729812D1870E49C00D46A73 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F729810F1870E49C00D46A73 /* UIKit.framework */; };
 		F72981351870E49C00D46A73 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F72981331870E49C00D46A73 /* InfoPlist.strings */; };
 		F72981371870E49C00D46A73 /* AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F72981361870E49C00D46A73 /* AppTests.m */; };
-		F72981411870E55600D46A73 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72981401870E55600D46A73 /* MainViewController.xib */; };
 		F72FB0C21883623A00D5A959 /* classy_fabric.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FB0C11883623A00D5A959 /* classy_fabric.png */; };
 		F76DE562188369F300BABE03 /* NewsArticleThumbNail.xib in Resources */ = {isa = PBXBuildFile; fileRef = F76DE561188369F300BABE03 /* NewsArticleThumbNail.xib */; };
 		F76DE56718836A9A00BABE03 /* UIPopoverController+iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DE56618836A9A00BABE03 /* UIPopoverController+iPhone.m */; };
-		F76DE56A18836B4B00BABE03 /* NewArticleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DE56918836B4B00BABE03 /* NewArticleViewCell.m */; };
+		F76DE56A18836B4B00BABE03 /* NewsArticleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DE56918836B4B00BABE03 /* NewsArticleViewCell.m */; };
 		F78FF7F61893749000EA5F70 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = F78FF7F11893749000EA5F70 /* TFHpple.m */; };
 		F78FF7F71893749000EA5F70 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F78FF7F31893749000EA5F70 /* TFHppleElement.m */; };
 		F78FF7F81893749000EA5F70 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = F78FF7F51893749000EA5F70 /* XPathQuery.m */; };
@@ -47,6 +45,8 @@
 		F7DED561188CEF2A0011FDDC /* NewsArticleContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7DED55F188CEF2A0011FDDC /* NewsArticleContentViewController.xib */; };
 		F7DED565188CF2CD0011FDDC /* NewArticleViewTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DED564188CF2CD0011FDDC /* NewArticleViewTransition.m */; };
 		F7DFCCF61871309300A4806F /* TableTennisNewsArticleReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DFCCF51871309300A4806F /* TableTennisNewsArticleReader.m */; };
+		F7EA59841899EEF20086727E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EA59821899EEF20086727E /* MainViewController.m */; };
+		F7EA59871899F2300086727E /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7EA59861899F2300086727E /* MainViewController.xib */; };
 		F7FEF6A118764D1200A93790 /* TableTennisRSSV2Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF6A018764D1200A93790 /* TableTennisRSSV2Delegate.m */; };
 		F7FEF6A41876509900A93790 /* TableTennisRSSV1Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF6A31876509900A93790 /* TableTennisRSSV1Delegate.m */; };
 		F7FEF6A7187653D900A93790 /* TableTennisRSSBaseReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF6A6187653D900A93790 /* TableTennisRSSBaseReader.m */; };
@@ -87,21 +87,18 @@
 		F72981191870E49C00D46A73 /* App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "App-Prefix.pch"; sourceTree = "<group>"; };
 		F729811A1870E49C00D46A73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F729811B1870E49C00D46A73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F72981201870E49C00D46A73 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		F72981211870E49C00D46A73 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		F72981231870E49C00D46A73 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = App/Images.xcassets; sourceTree = "<group>"; };
 		F72981291870E49C00D46A73 /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F729812A1870E49C00D46A73 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F72981321870E49C00D46A73 /* AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppTests-Info.plist"; sourceTree = "<group>"; };
 		F72981341870E49C00D46A73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F72981361870E49C00D46A73 /* AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTests.m; sourceTree = "<group>"; };
-		F72981401870E55600D46A73 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		F72FB0C11883623A00D5A959 /* classy_fabric.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = classy_fabric.png; sourceTree = "<group>"; };
 		F76DE561188369F300BABE03 /* NewsArticleThumbNail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsArticleThumbNail.xib; sourceTree = "<group>"; };
 		F76DE56518836A9A00BABE03 /* UIPopoverController+iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+iPhone.h"; sourceTree = "<group>"; };
 		F76DE56618836A9A00BABE03 /* UIPopoverController+iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+iPhone.m"; sourceTree = "<group>"; };
-		F76DE56818836B4B00BABE03 /* NewArticleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewArticleViewCell.h; sourceTree = "<group>"; };
-		F76DE56918836B4B00BABE03 /* NewArticleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewArticleViewCell.m; sourceTree = "<group>"; };
+		F76DE56818836B4B00BABE03 /* NewsArticleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsArticleViewCell.h; sourceTree = "<group>"; };
+		F76DE56918836B4B00BABE03 /* NewsArticleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsArticleViewCell.m; sourceTree = "<group>"; };
 		F78FF7F01893749000EA5F70 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		F78FF7F11893749000EA5F70 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
 		F78FF7F21893749000EA5F70 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
@@ -128,6 +125,9 @@
 		F7DED564188CF2CD0011FDDC /* NewArticleViewTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewArticleViewTransition.m; sourceTree = "<group>"; };
 		F7DFCCF41871309300A4806F /* TableTennisNewsArticleReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTennisNewsArticleReader.h; sourceTree = "<group>"; };
 		F7DFCCF51871309300A4806F /* TableTennisNewsArticleReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTennisNewsArticleReader.m; sourceTree = "<group>"; };
+		F7EA59811899EEF20086727E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		F7EA59821899EEF20086727E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		F7EA59861899F2300086727E /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		F7FEF69F18764D1200A93790 /* TableTennisRSSV2Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTennisRSSV2Delegate.h; sourceTree = "<group>"; };
 		F7FEF6A018764D1200A93790 /* TableTennisRSSV2Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTennisRSSV2Delegate.m; sourceTree = "<group>"; };
 		F7FEF6A21876509900A93790 /* TableTennisRSSV1Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTennisRSSV1Delegate.h; sourceTree = "<group>"; };
@@ -349,7 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				F7DED55F188CEF2A0011FDDC /* NewsArticleContentViewController.xib */,
-				F72981401870E55600D46A73 /* MainViewController.xib */,
+				F7EA59861899F2300086727E /* MainViewController.xib */,
 				F76DE561188369F300BABE03 /* NewsArticleThumbNail.xib */,
 			);
 			name = Views;
@@ -358,10 +358,10 @@
 		F7E7B7621870E9B3005E292A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F72981201870E49C00D46A73 /* MainViewController.h */,
-				F72981211870E49C00D46A73 /* MainViewController.m */,
-				F76DE56818836B4B00BABE03 /* NewArticleViewCell.h */,
-				F76DE56918836B4B00BABE03 /* NewArticleViewCell.m */,
+				F7EA59811899EEF20086727E /* MainViewController.h */,
+				F7EA59821899EEF20086727E /* MainViewController.m */,
+				F76DE56818836B4B00BABE03 /* NewsArticleViewCell.h */,
+				F76DE56918836B4B00BABE03 /* NewsArticleViewCell.m */,
 				F7DED55D188CEF2A0011FDDC /* NewsArticleContentViewController.h */,
 				F7DED55E188CEF2A0011FDDC /* NewsArticleContentViewController.m */,
 			);
@@ -458,12 +458,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F72981411870E55600D46A73 /* MainViewController.xib in Resources */,
 				F72FB0C21883623A00D5A959 /* classy_fabric.png in Resources */,
 				F7B695FB187104340050783E /* tabletennis.jpeg in Resources */,
 				F7B695F71871036D0050783E /* TableTennis.jpg in Resources */,
 				F7DED561188CEF2A0011FDDC /* NewsArticleContentViewController.xib in Resources */,
 				E69322C418932AAB005982FC /* Template.html in Resources */,
+				F7EA59871899F2300086727E /* MainViewController.xib in Resources */,
 				F76DE562188369F300BABE03 /* NewsArticleThumbNail.xib in Resources */,
 				F7B695FA187104340050783E /* tabletennis92p.jpg in Resources */,
 				F704D84E1874FA2F00F46C73 /* PlaceHolder.png in Resources */,
@@ -524,7 +524,6 @@
 				F7DFCCF61871309300A4806F /* TableTennisNewsArticleReader.m in Sources */,
 				F7DED565188CF2CD0011FDDC /* NewArticleViewTransition.m in Sources */,
 				F78FF7F81893749000EA5F70 /* XPathQuery.m in Sources */,
-				F72981221870E49C00D46A73 /* MainViewController.m in Sources */,
 				F78FF7F61893749000EA5F70 /* TFHpple.m in Sources */,
 				F71083E5188E1D4C00502A52 /* NewArticleContentDismissTransition.m in Sources */,
 				F70DA65A1894011F007D4832 /* MyLocation.m in Sources */,
@@ -532,6 +531,7 @@
 				F7FEF6A41876509900A93790 /* TableTennisRSSV1Delegate.m in Sources */,
 				F78FF7FC189374EA00EA5F70 /* TableTennisInformationService.m in Sources */,
 				F7FEF6A7187653D900A93790 /* TableTennisRSSBaseReader.m in Sources */,
+				F7EA59841899EEF20086727E /* MainViewController.m in Sources */,
 				F70DA65E18940341007D4832 /* LocationInfoService.m in Sources */,
 				F729811C1870E49C00D46A73 /* AppDelegate.m in Sources */,
 				F78FF8031893848000EA5F70 /* TTPlayer.m in Sources */,
@@ -540,7 +540,7 @@
 				F7FEF6A118764D1200A93790 /* TableTennisRSSV2Delegate.m in Sources */,
 				F70DA657189400CB007D4832 /* UIImage+ImageEffects.m in Sources */,
 				F7DED560188CEF2A0011FDDC /* NewsArticleContentViewController.m in Sources */,
-				F76DE56A18836B4B00BABE03 /* NewArticleViewCell.m in Sources */,
+				F76DE56A18836B4B00BABE03 /* NewsArticleViewCell.m in Sources */,
 				F76DE56718836A9A00BABE03 /* UIPopoverController+iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -44,7 +44,6 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     
     UINib *cellNib = [UINib nibWithNibName:@"NewsArticleThumbNail" bundle:nil];
     
-    [self.thumbNailsView registerClass:[NewsArticleViewCell class] forCellWithReuseIdentifier:@"thumbNailCell"];
     [self.thumbNailsView registerNib:cellNib forCellWithReuseIdentifier:@"thumbNailCell"];
     self.thumbNailsView.pagingEnabled = YES;
     
@@ -52,7 +51,7 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     [flowLayout setItemSize:CGSizeMake(150, 130)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     [self.thumbNailsView setCollectionViewLayout:flowLayout animated:YES completion:nil];
-    self.thumbNailsView.backgroundColor = [UIColor whiteColor];
+//    /self.thumbNailsView.backgroundColor = [UIColor whiteColor];
     
     
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -82,6 +81,7 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
 {
     NewsArticleViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"thumbNailCell" forIndexPath:indexPath];
     NewsArticle *newsArticle = (NewsArticle *)[newsArticles objectAtIndex:indexPath.row];
+    cell.newsArticle = newsArticle;
     [cell setDefaultImage];
     
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:newsArticle.imageURL ]];

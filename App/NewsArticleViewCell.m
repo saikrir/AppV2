@@ -15,6 +15,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         //[self setup];
+        NSString *frmStr = NSStringFromCGRect(frame);
+        NSLog(@"WTF %@", frmStr);
         //self.contentView.layer.borderWidth = 1.0f;
         //self.contentView.layer.borderColor = [UIColor yellowColor].CGColor;
     }
@@ -23,22 +25,36 @@
 
 
 -(void) setImage:(UIImage *) image{
+    
+    self.backgroundColor = [UIColor grayColor];
+    self.layer.borderWidth = 1.0f;
+    self.layer.borderColor = [UIColor blackColor].CGColor;
+    
+    self.articleLabel.text = self.newsArticle.title;
     self.articleThumbNailView.image = image;
+    self.articleThumbNailView.clipsToBounds = YES;
+    
+    CALayer *imgViewLayer = self.articleThumbNailView.layer;
+    
+    imgViewLayer.borderWidth = 1;
+    
+    imgViewLayer.masksToBounds = NO;
+    imgViewLayer.shadowOffset = CGSizeMake(5.0, 5.0);
+    imgViewLayer.shadowRadius = 8.0;
+    imgViewLayer.shadowOpacity = 0.8;
+    
 }
 
 
 -(void) setDefaultImage
 {
     self.articleThumbNailView.image = [UIImage imageNamed:@"PlaceHolder"];
-    [self setNeedsLayout];
 }
 
 - (void)setup
 {
 //    [self.articleThumbNailView removeFromSuperview];
   //  [self.backgroundView addSubview:self.articleThumbNailView];
-    [self.articleLabel removeFromSuperview];
-    [self.contentView addSubview:self.articleLabel];
 }
 
 @end

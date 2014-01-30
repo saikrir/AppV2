@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
                 <outlet property="thumbNailsView" destination="KXz-3u-TwI" id="Gfd-9q-3Va"/>
-                <outlet property="view" destination="1" id="t80-gk-Fqp"/>
+                <outlet property="view" destination="1" id="dOB-EQ-RwG"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -32,7 +32,7 @@
                     </connections>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="KXz-3u-TwI" firstAttribute="top" secondItem="1" secondAttribute="top" id="4gM-Bi-GNU"/>
                 <constraint firstAttribute="centerX" secondItem="KXz-3u-TwI" secondAttribute="centerX" id="TcI-NM-tjc"/>
