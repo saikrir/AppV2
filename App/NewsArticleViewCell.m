@@ -37,12 +37,10 @@
     CALayer *imgViewLayer = self.articleThumbNailView.layer;
     
     imgViewLayer.borderWidth = 1;
-    
     imgViewLayer.masksToBounds = NO;
     imgViewLayer.shadowOffset = CGSizeMake(5.0, 5.0);
     imgViewLayer.shadowRadius = 8.0;
     imgViewLayer.shadowOpacity = 0.8;
-    
 }
 
 

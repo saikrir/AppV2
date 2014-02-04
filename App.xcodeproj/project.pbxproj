@@ -15,6 +15,8 @@
 		F70DA65A1894011F007D4832 /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F70DA6591894011F007D4832 /* MyLocation.m */; };
 		F70DA65E18940341007D4832 /* LocationInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = F70DA65D18940341007D4832 /* LocationInfoService.m */; };
 		F71083E5188E1D4C00502A52 /* NewArticleContentDismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F71083E4188E1D4C00502A52 /* NewArticleContentDismissTransition.m */; };
+		F71A4E4818A0876800FB4CCE /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F71A4E4618A0876800FB4CCE /* ArticleWebViewController.m */; };
+		F71A4E4918A0876800FB4CCE /* ArticleWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71A4E4718A0876800FB4CCE /* ArticleWebViewController.xib */; };
 		F729810C1870E49C00D46A73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F729810B1870E49C00D46A73 /* Foundation.framework */; };
 		F729810E1870E49C00D46A73 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F729810D1870E49C00D46A73 /* CoreGraphics.framework */; };
 		F72981101870E49C00D46A73 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F729810F1870E49C00D46A73 /* UIKit.framework */; };
@@ -77,6 +79,9 @@
 		F70DA65D18940341007D4832 /* LocationInfoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationInfoService.m; sourceTree = "<group>"; };
 		F71083E3188E1D4C00502A52 /* NewArticleContentDismissTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewArticleContentDismissTransition.h; sourceTree = "<group>"; };
 		F71083E4188E1D4C00502A52 /* NewArticleContentDismissTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewArticleContentDismissTransition.m; sourceTree = "<group>"; };
+		F71A4E4518A0876800FB4CCE /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
+		F71A4E4618A0876800FB4CCE /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
+		F71A4E4718A0876800FB4CCE /* ArticleWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleWebViewController.xib; sourceTree = "<group>"; };
 		F72981081870E49C00D46A73 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F729810B1870E49C00D46A73 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F729810D1870E49C00D46A73 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -350,6 +355,7 @@
 			children = (
 				F7DED55F188CEF2A0011FDDC /* NewsArticleContentViewController.xib */,
 				F7EA59861899F2300086727E /* MainViewController.xib */,
+				F71A4E4718A0876800FB4CCE /* ArticleWebViewController.xib */,
 				F76DE561188369F300BABE03 /* NewsArticleThumbNail.xib */,
 			);
 			name = Views;
@@ -364,6 +370,8 @@
 				F76DE56918836B4B00BABE03 /* NewsArticleViewCell.m */,
 				F7DED55D188CEF2A0011FDDC /* NewsArticleContentViewController.h */,
 				F7DED55E188CEF2A0011FDDC /* NewsArticleContentViewController.m */,
+				F71A4E4518A0876800FB4CCE /* ArticleWebViewController.h */,
+				F71A4E4618A0876800FB4CCE /* ArticleWebViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -468,6 +476,7 @@
 				F7B695FA187104340050783E /* tabletennis92p.jpg in Resources */,
 				F704D84E1874FA2F00F46C73 /* PlaceHolder.png in Resources */,
 				F72981241870E49C00D46A73 /* Images.xcassets in Resources */,
+				F71A4E4918A0876800FB4CCE /* ArticleWebViewController.xib in Resources */,
 				F72981161870E49C00D46A73 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +547,7 @@
 				F78FF7F71893749000EA5F70 /* TFHppleElement.m in Sources */,
 				F72981181870E49C00D46A73 /* main.m in Sources */,
 				F7FEF6A118764D1200A93790 /* TableTennisRSSV2Delegate.m in Sources */,
+				F71A4E4818A0876800FB4CCE /* ArticleWebViewController.m in Sources */,
 				F70DA657189400CB007D4832 /* UIImage+ImageEffects.m in Sources */,
 				F7DED560188CEF2A0011FDDC /* NewsArticleContentViewController.m in Sources */,
 				F76DE56A18836B4B00BABE03 /* NewsArticleViewCell.m in Sources */,

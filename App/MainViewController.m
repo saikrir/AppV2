@@ -48,11 +48,8 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     self.thumbNailsView.pagingEnabled = YES;
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    [flowLayout setItemSize:CGSizeMake(150, 130)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     [self.thumbNailsView setCollectionViewLayout:flowLayout animated:YES completion:nil];
-//    /self.thumbNailsView.backgroundColor = [UIColor whiteColor];
-    
     
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     self.thumbNailSession = [NSURLSession sessionWithConfiguration:sessionConfig];
@@ -65,6 +62,13 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     LocationInfoService *lSvc = [[LocationInfoService alloc] init];
     lSvc.locationDataDelegate = self;
     [lSvc whatsMyLocation];
+}
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 
@@ -108,28 +112,26 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     newsArticleContentVC.newsArticle = newsArticle;
     newsArticleContentVC.modalPresentationStyle = UIModalPresentationCustom;
     newsArticleContentVC.transitioningDelegate = self;
+    newsArticleContentVC.delegate = self;
     
     [self presentViewController:newsArticleContentVC animated:YES completion:nil];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UICollectionView FlowLayout Delegates
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return CGSizeMake(150, 140);
 }
 
--(void) didRecieveNewsArticle:(NSArray *)news andError:(NSError *)error
-{
-    NSLog(@"Data Recieved");
-    [newsArticles addObjectsFromArray:news];
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [SVProgressHUD dismiss];
-        [self.thumbNailsView reloadData];
-    }];
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    
+    return UIEdgeInsetsMake(10, 5, 5, 5);
 }
 
 
-#pragma Mark - Transition Deleagtes
+
+#pragma mark - Transition Deleagtes
 
 -(id<UIViewControllerAnimatedTransitioning>) animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
@@ -141,6 +143,18 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
 {
     NewArticleContentDismissTransition *dismissTransition = [[NewArticleContentDismissTransition alloc] init];
     return dismissTransition;
+}
+
+#pragma mark - Data Delegate Methods
+
+-(void) didRecieveNewsArticle:(NSArray *)news andError:(NSError *)error
+{
+    NSLog(@"Data Recieved");
+    [newsArticles addObjectsFromArray:news];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [SVProgressHUD dismiss];
+        [self.thumbNailsView reloadData];
+    }];
 }
 
 -(void) didRecieveTableTennisTournamentInformation:(NSArray *)data andError:(NSError  *) error
@@ -176,5 +190,13 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
 {
     NSLog(@"IP %@", location.ip);
     NSLog(@"IP %@", location.regionCode);
+}
+
+
+-(void) didDismissQuickViewWith:(NewsArticle *)article
+{
+    ArticleWebViewController *articleWebVC = [[ArticleWebViewController alloc] initWithNibName:@"ArticleWebViewController" bundle:nil];
+    articleWebVC.newsArticle = article;
+    [self.navigationController pushViewController:articleWebVC animated:YES];
 }
 @end

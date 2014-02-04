@@ -6,13 +6,14 @@
 //  Copyright (c) 2014 Sai krishna K Rao. All rights reserved.
 //
 
-#import "SVProgressHUD.h"
 #import "NewsArticleContentViewController.h"
+#import "SVProgressHUD.h"
 
 @interface NewsArticleContentViewController ()
 @property (nonatomic,weak) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *closeButton;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *articleSegment;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *webViewBtn;
+
 @property (nonatomic, assign) CGRect originalFrame;
 @end
 
@@ -32,7 +33,6 @@
     [super viewDidLoad];
     self.webView.scalesPageToFit = YES;
     self.webView.delegate = self;
-    self.webView.scrollView.delegate = self;
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -58,6 +58,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)loadWebView:(id)sender {
+    [self.delegate didDismissQuickViewWith:self.newsArticle];
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 
 -(void) loadOfflineHTMLPage
 {
@@ -66,26 +70,6 @@
     [self.webView sizeToFit];
 }
 
--(void) loadOnlineArticle{
-    NSString *articleURLLink = self.newsArticle.link;
-    NSURL *articleURL = [NSURL URLWithString:articleURLLink];
-    NSURLRequest *request = [NSURLRequest requestWithURL:articleURL];
-    [self.webView loadRequest:request];
-}
-
-- (IBAction)handleArticleViewToggle:(id)sender {
-    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
-    NSUInteger selectedIndex = [segmentedControl selectedSegmentIndex];
-    NSURL *resetURL = [NSURL URLWithString:@"about:blank"];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:resetURL ]];
-    
-    if(selectedIndex == 0){
-        [self loadOfflineHTMLPage];
-    }
-    else{
-        [self loadOnlineArticle];
-    }
-}
 
 
 -(void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
@@ -130,32 +114,7 @@
 -(void) webViewDidFinishLoad:(UIWebView *)webView{
     
     [self.webView sizeToFit];
-    
-    CGRect webViewFrame = CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y, self.view.bounds.size.width - 10, self.view.bounds.size.height-100);
-
-    self.webView.frame = webViewFrame;
-    
     [SVProgressHUD dismiss];
-}
-
-
--(void) scrollViewDidScroll:(UIScrollView *)scrollView{
-    
-    CGPoint offset = scrollView.contentOffset;
-    CGRect webFrame = self.webView.frame;
-    if(offset.y > 0 ){
-        webFrame.origin.y = webFrame.origin.y- fabs(offset.y);
-        webFrame.origin.y = MAX(0,webFrame.origin.y);
-        webFrame.size.height = MIN(self.originalFrame.size.height, webFrame.size.height + fabs(offset.y));
-        self.webView.frame = webFrame;
-        scrollView.contentOffset = CGPointZero;
-    }
-    else{ // Scrolling down
-        webFrame.origin.y = MIN(self.originalFrame.origin.y, webFrame.origin.y + fabs(offset.y)); // if there is room to scroll down
-        webFrame.size.height = MAX(self.originalFrame.size.height -100, webFrame.size.height - fabs(offset.y));
-        self.webView.frame = webFrame;
-        scrollView.contentOffset = CGPointZero;
-    }
 }
 
 @end

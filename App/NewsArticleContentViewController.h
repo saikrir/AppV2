@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "NewsArticle.h"
 
-@interface NewsArticleContentViewController : UIViewController<UIWebViewDelegate, UIScrollViewDelegate>
+@protocol QuickViewDelegate <NSObject>
+-(void) didDismissQuickViewWith:(NewsArticle *) article;
+@end
+
+@interface NewsArticleContentViewController : UIViewController<UIWebViewDelegate>
 
 @property (nonatomic,strong) NewsArticle *newsArticle;
+@property (nonatomic,strong) id<QuickViewDelegate> delegate;
 
 @end

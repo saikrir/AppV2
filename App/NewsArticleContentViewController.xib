@@ -6,10 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsArticleContentViewController">
             <connections>
-                <outlet property="articleSegment" destination="b8Z-iz-8KC" id="iA0-Jm-95T"/>
-                <outlet property="closeButton" destination="RUz-eA-A3v" id="xdS-eE-vud"/>
+                <outlet property="closeButton" destination="S9F-kt-Jtj" id="ycf-nc-65S"/>
                 <outlet property="view" destination="1" id="3"/>
-                <outlet property="webView" destination="Nu0-aW-qMm" id="puH-l0-pv7"/>
+                <outlet property="webView" destination="RNK-zA-9Io" id="7T4-fs-9rI"/>
+                <outlet property="webViewBtn" destination="LCY-0P-Tae" id="3dC-w3-9Pf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -17,47 +17,39 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duk-it-jcs">
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20X-vq-a6w">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <items>
-                        <navigationItem title="News Article" id="OrX-bZ-aMJ">
-                            <barButtonItem key="rightBarButtonItem" title="Dismiss" id="RUz-eA-A3v">
+                        <navigationItem title="Quick View" id="15t-fV-pnZ">
+                            <barButtonItem key="leftBarButtonItem" title="Web View" id="LCY-0P-Tae">
                                 <connections>
-                                    <action selector="closeView:" destination="-1" id="wrx-DV-XCp"/>
+                                    <action selector="loadWebView:" destination="-1" id="5Hx-Sf-ncP"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="Dismiss" id="S9F-kt-Jtj">
+                                <connections>
+                                    <action selector="closeView:" destination="-1" id="z2u-Wf-SKk"/>
                                 </connections>
                             </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="b8Z-iz-8KC">
-                    <rect key="frame" x="56" y="59" width="209" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <segments>
-                        <segment title="Summary View"/>
-                        <segment title="Web View"/>
-                    </segments>
-                    <connections>
-                        <action selector="handleArticleViewToggle:" destination="-1" eventType="valueChanged" id="gJt-SR-kxU"/>
-                    </connections>
-                </segmentedControl>
-                <webView contentMode="scaleAspectFit" scalesPageToFit="YES" suppressesIncrementalRendering="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nu0-aW-qMm">
-                    <rect key="frame" x="0.0" y="89" width="320" height="479"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <webView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="RNK-zA-9Io">
+                    <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="duk-it-jcs" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="4sv-9Z-wWd"/>
-                <constraint firstItem="b8Z-iz-8KC" firstAttribute="centerX" secondItem="duk-it-jcs" secondAttribute="centerX" constant="0.5" id="6Dg-Ag-2jC"/>
-                <constraint firstItem="Nu0-aW-qMm" firstAttribute="top" secondItem="b8Z-iz-8KC" secondAttribute="bottom" constant="2" id="AmA-09-4ku"/>
-                <constraint firstItem="duk-it-jcs" firstAttribute="top" secondItem="1" secondAttribute="top" id="HDo-1o-I2X"/>
-                <constraint firstItem="Nu0-aW-qMm" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ZYw-Zk-DOm"/>
-                <constraint firstAttribute="centerX" secondItem="Nu0-aW-qMm" secondAttribute="centerX" id="bdF-Em-Nnp"/>
-                <constraint firstAttribute="centerY" secondItem="Nu0-aW-qMm" secondAttribute="centerY" constant="-44.5" id="lKw-P8-GA9"/>
-                <constraint firstAttribute="trailing" secondItem="duk-it-jcs" secondAttribute="trailing" id="odm-0t-C4a"/>
-                <constraint firstItem="Nu0-aW-qMm" firstAttribute="top" secondItem="1" secondAttribute="top" constant="89" id="tOS-LB-enK"/>
+                <constraint firstAttribute="centerX" secondItem="20X-vq-a6w" secondAttribute="centerX" id="AzL-aN-DLo"/>
+                <constraint firstItem="20X-vq-a6w" firstAttribute="top" secondItem="1" secondAttribute="top" id="FlM-IA-zNa"/>
+                <constraint firstItem="RNK-zA-9Io" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="SKN-BQ-nKq"/>
+                <constraint firstAttribute="centerX" secondItem="RNK-zA-9Io" secondAttribute="centerX" id="T2M-sb-cES"/>
+                <constraint firstItem="20X-vq-a6w" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="aOR-q2-EZ8"/>
+                <constraint firstAttribute="centerY" secondItem="RNK-zA-9Io" secondAttribute="centerY" constant="-22" id="hm3-DS-RiU"/>
+                <constraint firstItem="RNK-zA-9Io" firstAttribute="top" secondItem="1" secondAttribute="top" constant="44" id="tqD-eB-WLX"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

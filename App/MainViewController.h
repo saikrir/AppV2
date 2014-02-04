@@ -13,8 +13,10 @@
 #import "TableTennisInformationService.h"
 #import "TableTennisInformationServiceDelegate.h"
 #import "LocationInoDataDelegate.h"
+#import "NewsArticleContentViewController.h"
+#import "ArticleWebViewController.h"
 
 
-@interface MainViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate,NewsArticleDelegate,TableTennisInformationServiceDelegate,LocationInoDataDelegate>
+@interface MainViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIViewControllerTransitioningDelegate,NewsArticleDelegate,TableTennisInformationServiceDelegate,LocationInoDataDelegate, QuickViewDelegate>
 
 @end
