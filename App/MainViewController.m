@@ -33,6 +33,7 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
         newsArticles = [[NSMutableArray alloc] initWithCapacity:50];
         self.ttSvc = [[TableTennisInformationService alloc] init];
         self.ttSvc.dataDelegate = self;
+        self.title = @"News";
     }
     return self;
 }
