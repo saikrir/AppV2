@@ -14,11 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        //[self setup];
-        NSString *frmStr = NSStringFromCGRect(frame);
-        NSLog(@"WTF %@", frmStr);
-        //self.contentView.layer.borderWidth = 1.0f;
-        //self.contentView.layer.borderColor = [UIColor yellowColor].CGColor;
+        
     }
     return self;
 }
@@ -26,9 +22,8 @@
 
 -(void) setImage:(UIImage *) image{
     
-    self.backgroundColor = [UIColor grayColor];
     self.layer.borderWidth = 1.0f;
-    self.layer.borderColor = [UIColor blackColor].CGColor;
+    self.layer.borderColor = [UIColor colorWithRed:220 green:213 blue:164 alpha:1].CGColor;
     
     self.articleLabel.text = self.newsArticle.title;
     self.articleThumbNailView.image = image;

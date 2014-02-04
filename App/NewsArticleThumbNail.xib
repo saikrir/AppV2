@@ -18,22 +18,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SaG-Np-Eaf">
-                        <rect key="frame" x="65" y="114" width="21" height="10"/>
+                        <rect key="frame" x="65" y="119" width="21" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.91372555494308472" green="0.88627457618713379" blue="0.75294125080108643" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
                 <constraint firstItem="Q6l-xx-LsB" firstAttribute="leading" secondItem="DWd-9t-ejg" secondAttribute="leading" constant="5" id="9Tn-gb-NBp"/>
                 <constraint firstAttribute="centerX" secondItem="SaG-Np-Eaf" secondAttribute="centerX" id="KsD-O5-fIu"/>
                 <constraint firstAttribute="centerY" secondItem="Q6l-xx-LsB" secondAttribute="centerY" constant="10" id="Wew-3H-Sj1"/>
                 <constraint firstItem="Q6l-xx-LsB" firstAttribute="top" secondItem="DWd-9t-ejg" secondAttribute="top" constant="5" id="dZn-eT-apf"/>
-                <constraint firstAttribute="centerY" secondItem="SaG-Np-Eaf" secondAttribute="centerY" constant="-53.5" id="hJG-mm-4CN"/>
+                <constraint firstAttribute="centerY" secondItem="SaG-Np-Eaf" secondAttribute="centerY" constant="-56.5" id="hJG-mm-4CN"/>
                 <constraint firstAttribute="centerX" secondItem="Q6l-xx-LsB" secondAttribute="centerX" id="jPQ-Dx-5zS"/>
             </constraints>
             <size key="customSize" width="188" height="-50"/>
