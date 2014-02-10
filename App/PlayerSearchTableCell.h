@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TTPlayer.h"
 
 @interface PlayerSearchTableCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *playerImage;
+@property (weak, nonatomic) IBOutlet UILabel *playerName;
+@property (weak, nonatomic) IBOutlet UILabel *playerRank;
+@property (weak, nonatomic) IBOutlet UILabel *playerState;
 
+
+-(void) setPlayerData:(TTPlayer *) player;
 @end

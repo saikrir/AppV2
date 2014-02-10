@@ -122,27 +122,28 @@
                     {
                         if([tdElement hasChildren] && ![@"text" isEqualToString:[tdElement firstChild].tagName]){
                             if(idx == 5){
-                                player.name = tdElement.firstChild.text;
+                                player.name = [tdElement.firstChild.text stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
                             }
                             else{
-                                player.lastPlay = tdElement.firstChild.text;
+                                player.lastPlay = [tdElement.firstChild.text stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
                             }
                         }
                         else{
                             
                             if(idx!= 6 && (idx%2 ==1)){
+                                NSString *text = [tdElement.text stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
                                 switch (idx) {
                                     case 1:
-                                        player.memberId = tdElement.text;
+                                        player.memberId = text;
                                         break;
                                     case 3:
-                                        player.expDate= tdElement.text;
+                                        player.expDate= text;
                                         break;
                                     case 7:
-                                        player.rating = tdElement.text;
+                                        player.rating = text;
                                         break;
                                     case 9:
-                                        player.state = tdElement.text;
+                                        player.state = text;
                                         break;
                                     default:
                                         break;

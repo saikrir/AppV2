@@ -25,5 +25,23 @@
 
     // Configure the view for the selected state
 }
+-(void) setPlayerData:(TTPlayer *) player
+{
+    self.layer.borderWidth = 0.3f;
+    [self setupImageView];
+    self.layer.borderColor = [UIColor blackColor].CGColor;
+    self.playerName.text = [NSString stringWithFormat:@"Name: %@", player.name ];
+    self.playerRank.text = [NSString stringWithFormat:@"Rating: %@", player.rating ];
+    self.playerState.text = [NSString stringWithFormat:@"State: %@", player.state ];
+}
+
+-(void) setupImageView{
+    CALayer *imageLayer = self.playerImage.layer;
+    self.playerImage.image = [UIImage imageNamed:@"Player"];
+    imageLayer.borderColor = [UIColor blackColor].CGColor;
+    imageLayer.borderWidth = 1;
+    [imageLayer setCornerRadius:20];
+    [imageLayer setMasksToBounds:YES];
+}
 
 @end

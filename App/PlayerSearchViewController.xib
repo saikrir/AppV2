@@ -16,8 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="irP-PN-0gh">
-                    <rect key="frame" x="0.0" y="62" width="320" height="512"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="irP-PN-0gh">
+                    <rect key="frame" x="0.0" y="93" width="320" height="512"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -25,8 +25,8 @@
                         <outlet property="delegate" destination="-1" id="Jq1-Q7-1a7"/>
                     </connections>
                 </tableView>
-                <searchBar contentMode="scaleAspectFit" searchBarStyle="minimal" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUw-hR-CT1">
-                    <rect key="frame" x="0.0" y="18" width="320" height="44"/>
+                <searchBar contentMode="scaleAspectFit" searchBarStyle="minimal" text="Player Name" prompt="Enter Player Name" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUw-hR-CT1">
+                    <rect key="frame" x="0.0" y="18" width="320" height="75"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                     <connections>
@@ -39,11 +39,11 @@
                 <accessibilityTraits key="traits" none="YES" searchField="YES"/>
             </accessibility>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="irP-PN-0gh" secondAttribute="centerY" constant="-34" id="4oK-bM-5Eb"/>
+                <constraint firstAttribute="centerY" secondItem="irP-PN-0gh" secondAttribute="centerY" constant="-65" id="4oK-bM-5Eb"/>
                 <constraint firstItem="NUw-hR-CT1" firstAttribute="top" secondItem="1" secondAttribute="top" constant="18" id="8Mf-I0-aZS"/>
                 <constraint firstAttribute="centerX" secondItem="irP-PN-0gh" secondAttribute="centerX" id="Hhf-hN-Hee"/>
                 <constraint firstItem="NUw-hR-CT1" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Qhi-ec-iDd"/>
-                <constraint firstItem="irP-PN-0gh" firstAttribute="top" secondItem="1" secondAttribute="top" constant="62" id="RSG-Uy-I5P"/>
+                <constraint firstItem="irP-PN-0gh" firstAttribute="top" secondItem="1" secondAttribute="top" constant="93" id="RSG-Uy-I5P"/>
                 <constraint firstItem="irP-PN-0gh" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Tx9-nt-ejS"/>
                 <constraint firstAttribute="centerX" secondItem="NUw-hR-CT1" secondAttribute="centerX" id="uhN-9Z-LDz"/>
             </constraints>

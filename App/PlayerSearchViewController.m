@@ -48,6 +48,9 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    [self.playerSearch becomeFirstResponder];
+    [self.searchResults removeAllObjects];
+    [self.playerSearchResults reloadData];
     //self.playerSearchResults.tableHeaderView = self.playerSearch;
 }
 -(void) viewWillLayoutSubviews{
@@ -63,10 +66,18 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    NSLog(@"SearchBar Search Button Clicked %@",    searchBar.text);
     NSString *searchStr = searchBar.text;
     [self.ttInfoSvc searchPlayer:searchStr];
-    //[SVProgressHUD showWithStatus:@"Searching"];
+    [searchBar resignFirstResponder];
+    [SVProgressHUD showWithStatus:@"Searching" maskType:SVProgressHUDMaskTypeBlack];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
+{
+    [self.searchResults removeAllObjects];
+    [self.playerSearchResults reloadData];
+    searchBar.text = @"";
+    [searchBar becomeFirstResponder];
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -84,12 +95,8 @@
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TTPlayer *player = (TTPlayer *)[ self.searchResults objectAtIndex:indexPath.row];
-     NSLog(@"Player Name %@",    player.name);
     PlayerSearchTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlayerCell"];
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlayerCell"];
-    cell.imageView.image = [UIImage imageNamed:@"Player"];
-    cell.imageView.backgroundColor = [UIColor clearColor];
-    cell.textLabel.text = player.name;
+    [cell setPlayerData:player];
     return cell;
 }
 
@@ -100,6 +107,7 @@
     NSLog(@"Data Was recieved %d", [self.searchResults count]);
     dispatch_sync(dispatch_get_main_queue(), ^{
         [self.playerSearchResults reloadData];
+        [SVProgressHUD dismiss];
     });
 
 }
