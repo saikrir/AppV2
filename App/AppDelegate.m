@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "PlayerSearchViewController.h"
 
 @implementation AppDelegate
 
@@ -18,8 +19,10 @@
     
     MainViewController *mainVC = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainVC];
-    [self.mainViewController setViewControllers:@[navController]];
+    PlayerSearchViewController *playerSearchVC = [[PlayerSearchViewController alloc]  initWithNibName:@"PlayerSearchViewController" bundle:nil];
+    //UINavigationController *playerNavController = [[UINavigationController alloc] initWithRootViewController:playerSearchVC];
     
+    [self.mainViewController setViewControllers:@[navController,playerSearchVC]];
     self.window.rootViewController = self.mainViewController;
     [self.window makeKeyAndVisible];
     

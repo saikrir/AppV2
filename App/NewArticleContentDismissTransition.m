@@ -31,7 +31,6 @@
         [UIView addKeyframeWithRelativeStartTime:0.8 relativeDuration:0.2 animations:^{
             CGRect downFrame = CGRectMake(initFrame.origin.x, initFrame.size.height +20 , initFrame.size.width, initFrame.size.height);
             contentVC.view.frame = downFrame;
-           // contentVC.view.transform = CGAffineTransformMakeRotation(2);
         }];
         
     } completion:^(BOOL finished) {

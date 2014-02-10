@@ -18,7 +18,7 @@
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KXz-3u-TwI">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="0.70980393890000004" green="0.62352943419999995" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" red="0.89411771297454834" green="0.89019614458084106" blue="0.83529418706893921" alpha="1" colorSpace="deviceRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="E2h-3l-ap6">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
